@@ -1,0 +1,21 @@
+{
+  "name": "@centisync/extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "@centisync/render-react": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.2",
+    "@types/chrome": "^0.1.0"
+  }
+}

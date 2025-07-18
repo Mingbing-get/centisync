@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "@centisync/extension",
+  "version": "1.0.0",
+  "description": "centisync",
+  "action": {
+    "default_popup": "src/popup/index.html"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/content/content.ts"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["storage"]
+}

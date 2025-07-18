@@ -31,18 +31,10 @@ export default defineFlatConfig([
     },
     rules: {
       // TypeScript 规则
-      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-namespace': 'off',
       'semi': ['error', 'never'],
-
-      // Import 排序和优化
-      'import/order': [
-        'error',
-        {
-          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-          'newlines-between': 'always',
-          alphabetize: { order: 'asc', caseInsensitive: true },
-        },
-      ]
     },
     ignores: [
       '**/node_modules/**',
