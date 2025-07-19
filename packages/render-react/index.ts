@@ -1,1 +1,2 @@
-export { default as Test } from './src/test'
+export * from './src/chatMessagesRender/type'
+export { default as ChatMessagesRender } from './src/chatMessagesRender'

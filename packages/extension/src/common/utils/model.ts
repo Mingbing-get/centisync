@@ -29,3 +29,9 @@ export async function removeModelConfig() {
     })
   })
 }
+
+export function modelConfigIsComplete(data?: Partial<ModelConfig>): data is ModelConfig {
+  if (!data) return false
+
+  return !!(data.apiKey && data.model && data.url)
+}

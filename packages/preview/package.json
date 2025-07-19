@@ -8,7 +8,8 @@
     "dev": "vite"
   },
   "dependencies": {
-    "@centisync/render-react": "workspace:*"
+    "@centisync/render-react": "workspace:*",
+    "@centisync/core": "workspace:*"
   },
   "keywords": [],
   "author": "",

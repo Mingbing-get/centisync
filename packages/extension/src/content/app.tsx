@@ -1,19 +1,10 @@
-import React from 'react'
-import ReactDom from 'react-dom/client'
+import { IconSettings, IconMessage } from '@arco-design/web-react/icon'
 
-import { AppProvider } from './context'
 import Bar from './components/bar'
+import Config from './components/config'
 
-function AppUi() {
-  return <Bar />
-}
-
-export default function render(root: HTMLElement) {
-  ReactDom.createRoot(root).render(
-    <React.StrictMode>
-      <AppProvider name='content'>
-        <AppUi />
-      </AppProvider>
-    </React.StrictMode>
-  )
+export default function App() {
+  return <Bar actions={[
+    { name: '模型配置', icon: <IconSettings width={16} />, render: <Config /> }
+  ]} />
 }

@@ -8,4 +8,63 @@
   box-shadow: 0 0 6px #ccc;
   height: 40px;
   box-sizing: border-box;
+  position: relative;
+  transition: transform 0.2s linear;
+  transform: translateX(24px);
+
+  &::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 24px;
+    z-index: -1;
+  }
+
+  .content-send {
+    cursor: pointer;
+  }
+
+  .content-actions {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px;
+    border-radius: 10000000px;
+    box-shadow: 0 0 6px #ccc;
+    transition: transform 0.2s linear;
+    transform: translate(80px, calc(100% + 16px));
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .content-action-item {
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      font-size: 14px;
+      box-shadow: 0 0 4px #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:hover {
+        color: #409eff;
+      }
+    }
+  }
+
+  &:hover {
+    transform:  translate(0);
+    &::before {
+      transform: translateY(100%);
+    }
+    .content-actions {
+      transform: translate(0, calc(100% + 16px));
+    }
+  }
 }

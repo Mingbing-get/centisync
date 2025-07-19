@@ -1,0 +1,30 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.chat-input {
+  padding-top: 16px;
+  
+  .input-container {
+    position: relative;
+    
+    .arco-textarea {
+      width: 100%;
+      padding-right: 50px; // 为发送按钮留出更多空间
+      min-height: 60px; // 确保输入框有足够的高度
+      resize: none;
+    }
+    
+    .send-button {
+      position: absolute;
+      right: 10px;
+      bottom: 14px; // 调整底部位置，确保在输入框内部
+      z-index: 2;
+    }
+  }
+}

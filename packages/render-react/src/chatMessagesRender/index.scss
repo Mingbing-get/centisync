@@ -1,0 +1,19 @@
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px;
+  overflow-y: auto;
+
+  .chat-message {
+    max-width: 80%;
+    box-sizing: border-box;
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+
+    &.role-user {
+      align-self: flex-end;
+    }
+  }
+}

@@ -11,7 +11,7 @@
   },
   "content_scripts": [
     {
-      "js": ["src/content/content.ts"],
+      "js": ["src/content/content.tsx"],
       "matches": ["<all_urls>"]
     }
   ],
