@@ -2,6 +2,18 @@ import type { ChatClintNS } from '@centisync/core'
 
 export type Status = 'wait' | 'running' | 'success' | 'failed'
 
+export interface ToolRenderProps<T extends Record<string, any>> {
+  id: string
+  params: T
+  status: Status
+}
+
+export interface DefineTool {
+  name: string
+  title: string
+  Render?: <T extends Record<string, any>>(props: ToolRenderProps<T>) => React.ReactNode
+}
+
 export interface Tool {
   id: string,
   name: string,

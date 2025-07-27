@@ -11,7 +11,7 @@ document.body.appendChild(root)
 
 ReactDom.createRoot(root).render(
   <React.StrictMode>
-    <AppProvider name='content'>
+    <AppProvider>
       <App />
     </AppProvider>
   </React.StrictMode>

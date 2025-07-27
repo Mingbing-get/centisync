@@ -1,0 +1,37 @@
+.chat-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+
+  &:has(:focus) {
+    border-color: #165dff;
+  }
+
+  .arco-textarea {
+    background-color: #fff;
+    border: none;
+    resize: none;
+    padding: 0;
+  }
+
+  .chat-input-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .chat-input-custom-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      .chat-input-action:not(:last-child) {
+        padding-right: 8px;
+        margin-right: 8px;
+        border-right: 1px solid #ccc;
+      }
+    }
+  }
+}

@@ -68,3 +68,10 @@
     }
   }
 }
+
+.chat-modal {
+  min-width: 80vw;
+  .arco-modal-content {
+    padding: 0;
+  }
+}

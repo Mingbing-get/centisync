@@ -54,8 +54,8 @@ export default function Bar({ actions }: Props) {
         {action?.render}
       </Modal>
       <Modal
+        className='chat-modal'
         visible={chatVisible}
-        style={{ minWidth: '60vw' }}
         title='centisync'
         footer={null}
         onCancel={() => setChatVisible(false)}

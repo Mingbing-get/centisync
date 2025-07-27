@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function AppProvider({ name, children }: Props) {
-  const appRef = useRef(new App(chrome.runtime.connect({ name })))
+  const appRef = useRef(new App(chrome.runtime.connect({ name: name || crypto.randomUUID() })))
 
   const contextValue: AppContext = useMemo(() => ({
     app: appRef.current

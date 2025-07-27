@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { Input, Button, Message as ArcoMessage, Empty } from '@arco-design/web-react'
-import { IconSend } from '@arco-design/web-react/icon'
-import { ChatMessagesRender } from '@centisync/render-react'
+import { useState } from 'react'
+import { Message as ArcoMessage, Empty } from '@arco-design/web-react'
+import { ChatMessagesRender, ChatInput } from '@centisync/render-react'
 
 import useConnectAiWithMessage from './useConnectAiWithMessage'
+import AcceptAction from './AcceptAction'
 import './index.scss'
 
 export default function Chat() {
@@ -23,14 +23,6 @@ export default function Chat() {
     }
   }
 
-  // 处理按键事件
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault()
-      handleSendMessage()
-    }
-  }
-
   return (
     <div className="chat-container">
       <ChatMessagesRender
@@ -43,26 +35,19 @@ export default function Chat() {
         }
       />
       
-      <div className="chat-input">
-        <div className="input-container">
-          <Input.TextArea
-            placeholder="输入任务..."
-            value={inputValue}
-            onChange={setInputValue}
-            onKeyDown={handleKeyPress}
-            autoSize={{ minRows: 2, maxRows: 4 }}
-          />
-          <Button
-            type="primary"
-            shape="circle"
-            size='small'
-            icon={<IconSend />}
-            onClick={handleSendMessage}
-            disabled={!inputValue.trim() || running}
-            className="send-button"
-          />
-        </div>
-      </div>
+      <ChatInput
+        value={inputValue}
+        running={running}
+        onChange={setInputValue}
+        onSend={handleSendMessage}
+        actions={[
+          <AcceptAction />
+        ]}
+        autoSize={{
+          minRows: 1,
+          maxRows: 4
+        }}
+      />
     </div>
   )
 }

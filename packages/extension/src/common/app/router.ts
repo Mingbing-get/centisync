@@ -7,11 +7,17 @@ export default class Router {
 
   all(): PortApp.MiddleWare {
     return async (context, next) => {
-      if (!context.route.startsWith(this.prefix)) return
+      if (!context.route.startsWith(this.prefix)) {
+        next()
+        return
+      }
 
       const afterRoute = context.route.substring(this.prefix.length)
       const fn = this.routeMap[afterRoute]
-      if (!fn) return
+      if (!fn) {
+        next()
+        return
+      }
 
       const send = (data: any) => {
         context.app.send({
